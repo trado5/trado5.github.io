@@ -1,0 +1,124 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #555555;
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    overflow: hidden;
+}
+
+#animation {
+    position: absolute;
+}
+
+#animation > img {
+    position: absolute;
+    opacity: 0.6;
+}
+
+#card-container {
+    flex-grow: 1;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    perspective: 5000px;
+}
+
+#card {
+    background-color: white;
+
+    border-radius: 12px;
+    width: 90vw;
+    height: calc(90vw * 1.59);
+
+    background-size: contain;
+
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+    position: relative;
+}
+
+#card.flipped {
+    transform: rotateY(180deg);
+}
+
+.card-side {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-size: contain;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+.card-side > div {
+    position: absolute;
+}
+
+.card-side > div > p {
+    font-family: "DejaVu Sans";
+    transform: rotateZ(90deg);
+    /* word-spacing: -0.5px; */
+    letter-spacing: 0.45px;
+}
+
+#name {
+    left: 0;
+    right: 21%;
+    top: 29.3%;
+    bottom: 0;
+    font-size: 3.44vw;
+    color: #080808;
+}
+
+#pnr {
+    left: 0;
+    right: 32.0%;
+    top: 26%;
+    bottom: 0;
+    font-size: 3.39vw;
+    color: #080808;
+}
+
+#knr {
+    left: 0;
+    right: 45.5%;
+    top: 22%;
+    bottom: 0;
+    font-size: 2.06vw;
+    color: #3b3b3b;
+}
+
+.card-front {
+    background-image: url("../img/blank-front.png");
+}
+
+.card-back {
+    background-image: url("../img/ella-back.png");
+    transform: rotateY(180deg);
+}
+
+footer {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+
+    height: 40px;
+    background-color: white;
+}
+
+#footer-qr {
+    width: 70px;
+    margin-right: 20px;
+}
